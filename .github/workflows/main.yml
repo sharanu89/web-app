@@ -1,26 +1,26 @@
- name:Build and Test
- on:[push]
+ name: Build and Test
+ on: [push]
  
  jobs:
  build:
- runs-on:ubuntu-latest
+ runs-on: ubuntu-latest
  
  steps:
 
- -name:Checkoutcode
- uses:actions/checkout@v3
+ -name: Checkout code
+ uses: actions/checkout@v3
  
- -name:SetupNode.js
- uses:actions/setup-node@v3
+ -name: Set up Node.js
+ uses: actions/setup-node@v3
  with:
  node-version: '14'
  -name:Installdependencies
  run:npminstall
  
- -name:RunJavaScriptfile
- run:nodeapp.js
- -name:Test
- run:echo 'test was sucessfull' 
+ -name: Run Java Script file
+ run: node app.js
+ -name: Test
+ run: echo 'test was successfull' 
 
  
  run:echo'Testwassuccessful
