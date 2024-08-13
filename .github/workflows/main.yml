@@ -1,0 +1,26 @@
+ name:Build and Test
+ on:[push]
+ 
+ jobs:
+ build:
+ runs-on:ubuntu-latest
+ 
+ steps:
+
+ -name:Checkoutcode
+ uses:actions/checkout@v3
+ 
+ -name:SetupNode.js
+ uses:actions/setup-node@v3
+ with:
+ node-version: '14'
+ -name:Installdependencies
+ run:npminstall
+ 
+ -name:RunJavaScriptfile
+ run:nodeapp.js
+ -name:Test
+ run:echo 'test was sucessfull' 
+
+ 
+ run:echo'Testwassuccessful
